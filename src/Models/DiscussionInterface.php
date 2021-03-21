@@ -30,5 +30,5 @@ interface DiscussionInterface
 
     public function getUserReactionsAttribute();
     
-    public function sluggable();
+    public function sluggable(): array;
 }
