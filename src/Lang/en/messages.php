@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'new_discussion' => 'New discussion',
     'question' => 'Ask a question',
     'viewing_all_discussions' => 'Viewing all discussions',
     'of' => 'of',
