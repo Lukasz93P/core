@@ -9,7 +9,7 @@
                         <div class="modal-content p-2 px-4 text-left">
                             <!--Title-->
                             <div class="flex justify-between items-center">
-                                <p class="text-2xl">{{ chatterTrans.get('chatter.messages.viewing_page') }}</p>
+                                <p class="text-2xl">{{ chatterTrans.get('chatter.messages.new_discussion') }}</p>
                                 <div @click="closeModal()" class="modal-close cursor-pointer z-50 p-4">
                                     <svg class="fill-current text-black" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
