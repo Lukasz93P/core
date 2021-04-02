@@ -155,9 +155,6 @@ export default {
                     self.setDiscussionPage(response.data.meta.current_page)
                     self.setDiscussionLastPage(response.data.meta.last_page)
 
-                    if (1 === self.discussionGetter.page) {
-                        response.data.data.shift();
-                    }
                     self.posts = response.data.data;
                 })
                 .catch(error => console.error(error))
