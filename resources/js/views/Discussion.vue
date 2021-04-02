@@ -25,7 +25,7 @@
                         <div class="inline-block"><span class="font-bold">{{ discussion.user.username }}</span> <span
                                 class="text-sm text-gray-600"> | {{ discussion.post.time_ago }}</span></div>
                     </div>
-                    
+
                     <div class="post body w-full text-lg text-gray-800 leading-relaxed mt-4" v-html="discussion.post.body"></div>
                     <div class="pt-4 pb-2">
                         <reactions
@@ -43,7 +43,7 @@
                             </a>
                             <div class="inline-block"><span class="font-bold">{{ post.user.username }}</span> <span class="text-sm text-gray-600"> | {{ post.time_ago }}</span></div>
                         </div>
-                        
+
                         <div class="post body w-full text-lg text-gray-800 leading-relaxed mt-4" v-html="post.body"></div>
 
                         <div class="pt-4">
@@ -130,7 +130,7 @@ export default {
             this.setDiscussionPage(page)
             this.setLoading(true)
 
-            // Returns the discussion information            
+            // Returns the discussion information
             axios.get('/api/chatter/discussion/' + route.params.title)
                 .then(response => {
                     self.discussion = response.data.data
@@ -154,6 +154,10 @@ export default {
                 .then(response => {
                     self.setDiscussionPage(response.data.meta.current_page)
                     self.setDiscussionLastPage(response.data.meta.last_page)
+
+                    if (1 === self.discussionGetter.page) {
+                      response.data.data.shift();
+                    }
 
                     self.posts = response.data.data;
                 })
