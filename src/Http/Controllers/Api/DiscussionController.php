@@ -49,7 +49,9 @@ class DiscussionController extends Controller
             return $collection;
         }
 
-        return new DiscussionCollection(Discussion::paginate(config('chatter.paginate.discussions')));
+        return new DiscussionCollection(
+            Discussion::orderBy('last_reply_at', 'desc')->paginate(config('chatter.paginate.discussions'))
+        );
     }
 
     /**
